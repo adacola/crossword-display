@@ -1,0 +1,9 @@
+{
+  "unionCasesNames": {
+    "enabled": true,
+    "config": {
+      "naming": "PascalCase",
+      "underscores": "AllowAny"
+    }
+  }
+}

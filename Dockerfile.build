@@ -1,0 +1,27 @@
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+
+WORKDIR /src
+
+# dotnet tool
+COPY .config/ .config/
+
+RUN set -x     && dotnet tool restore
+
+# dependencies
+COPY paket.dependencies ./
+COPY paket.lock ./
+
+RUN set -x     && dotnet paket restore
+
+# build
+COPY crossword-display.sln ./
+COPY crossword-display/ crossword-display/
+
+RUN set -x     && dotnet publish crossword-display.sln -c Release -o /app
+
+# final stage/image
+FROM mcr.microsoft.com/dotnet/runtime:6.0
+WORKDIR /app
+
+COPY --from=build /app .
+ENTRYPOINT ["dotnet", "crossword-display.dll"]

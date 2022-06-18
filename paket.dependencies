@@ -1,0 +1,8 @@
+source https://api.nuget.org/v3/index.json
+
+nuget Argu
+nuget FSharp.Core
+nuget FSharp.Data
+nuget FSharpPlus
+nuget Kana.NET
+nuget System.Text.Encoding.CodePages

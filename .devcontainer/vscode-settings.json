@@ -1,0 +1,12 @@
+{
+    "terminal.integrated.allowChords": false,
+    "FSharp.fsacRuntime":"netcore",
+    "FSharp.useSdkScripts": true,
+    "FSharp.smartIndent": true,
+    "[fsharp]": {
+        "editor.renderWhitespace": "selection",
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    "FSharp.suggestGitignore": false
+}

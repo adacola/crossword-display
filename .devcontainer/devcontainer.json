@@ -1,0 +1,38 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.154.0/containers/docker-existing-dockerfile
+{
+	"name": "Existing Dockerfile",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": ".",
+		"args": {},
+		"target": "devcontainer"
+	},
+	"containerUser": "vscode",
+	"remoteUser": "vscode",
+	"updateRemoteUserUID": true,
+	"overrideCommand": false,
+	"mounts": [
+		"source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
+		"source=${localWorkspaceFolder}/.devcontainer/.extensions,target=/home/vscode/.vscode-server/extensions,type=bind",
+		"source=${localWorkspaceFolder}/.devcontainer/.insiders-extensions,target=/home/vscode/.vscode-server-insiders/extensions,type=bind"
+	],
+	"forwardPorts": [],
+	"runArgs": [
+		"--init",
+		"--net=host"
+	],
+	"postStartCommand": "bash -eux .devcontainer/post-start.sh",
+	"extensions": [
+		"mosapride.zenkaku",
+		"ms-dotnettools.csharp",
+		"ionide.ionide-fsharp",
+		"ionide.ionide-paket",
+		"ionide.ionide-fake",
+		"formulahendry.dotnet-test-explorer",
+		"formulahendry.code-runner",
+		"davidhouchin.whitespace-plus",
+		"coenraads.bracket-pair-colorizer-2",
+		"ms-vsliveshare.vsliveshare"
+	]
+}
