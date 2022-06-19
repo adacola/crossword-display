@@ -9,6 +9,7 @@
   <ItemGroup>
     <Compile Include="HttpClient.fs" />
     <Compile Include="Message.fs" />
+    <Compile Include="Crossword.fs" />
     <Compile Include="JapaneseCrossword.fs" />
     <Compile Include="EnglishCrossword.fs" />
     <Compile Include="Main.fs" />
